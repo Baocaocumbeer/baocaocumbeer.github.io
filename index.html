@@ -8,13 +8,21 @@
 <link rel="icon" type="image/png" href="icon_1.png">
 <link rel="apple-touch-icon" href="icon_1.png">
 <meta name="apple-mobile-web-app-title" content="BC Cụm Beer">
+<link rel="preconnect" href="https://script.google.com">
+<link rel="preconnect" href="https://script.googleusercontent.com">
 <style>
-  html,body{margin:0;height:100%;background:#05080f;overflow:hidden}
-  iframe{position:fixed;inset:0;width:100%;height:100%;border:0}
+  html,body{margin:0;height:100%;background:#05080f;overflow:hidden;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+  #splash{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:#9aa6bf;font-size:14px;transition:opacity .4s}
+  #splash img{width:120px;height:120px;border-radius:28px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+  #splash i{width:26px;height:26px;border:3px solid rgba(255,255,255,.15);border-top-color:#c49a5a;border-radius:50%;animation:s .8s linear infinite}
+  @keyframes s{to{transform:rotate(360deg)}}
+  iframe{position:fixed;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .4s}
+  body.ok iframe{opacity:1}body.ok #splash{opacity:0;pointer-events:none}
 </style>
 </head>
 <body>
+<div id="splash"><img src="icon_1.png" alt=""><i></i><span>Đang tải báo cáo…</span></div>
 <iframe src="https://script.google.com/macros/s/AKfycbxzUGRb3upmLwJtGIzEqjpfx042aH7sTw8yMlIAqoqX2G1s2DPwI3aFc7SI6zug0ASr/exec"
-        allow="camera; clipboard-write" title="Báo cáo Cụm Beer"></iframe>
+        allow="camera; clipboard-write" title="Báo cáo Cụm Beer" onload="setTimeout(function(){document.body.className='ok'},600)"></iframe>
 </body>
 </html>
